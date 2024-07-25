@@ -46,3 +46,21 @@ for (let i of products.data) {
 
     document.getElementById("products").appendChild(card);
 }
+
+
+function filterProduct(value) {
+    let buttons = document.querySelectorAll(".button-value");
+
+    buttons.forEach((button) => {
+        if (value.toUpperCase() == button.innerText.toUpperCase()) {
+            button.classList.add("active")
+        }
+    }
+    else {
+            button.classList.remove("active")
+        })
+}
+
+window.onload = () => {
+    filterProduct("all")
+}
