@@ -1,0 +1,38 @@
+# Count Animation
+
+This project showcases a simple count animation using HTML, CSS, and Boxicons. The animation is styled in a grid layout within a bordered wrapper.
+
+## Features
+
+- Grid layout for displaying items
+- Icons from Boxicons library
+- Simple and clean design
+
+## Usage
+
+To use this project, simply open the `index.html` file in your browser.
+
+## Files
+
+- `index.html`: The main HTML file containing the structure of the page.
+- `styles.css`: The CSS file containing styles for the page.
+
+## Installation
+
+1. Clone the repository to your local machine.
+2. Open the `index.html` file in your preferred web browser.
+
+## Dependencies
+
+- [Boxicons](https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css): A free collection of carefully crafted open-source icons.
+
+## Customization
+
+You can customize the icons and text by editing the `index.html` file. Update the `i` tags for icons and `span` tags for text.
+
+```html
+<div class="container">
+    <i class='bx bx-bowl-rice'></i>
+    <span class="num" data-val="300">000</span>
+    <span class="text">Meals Delivered</span>
+</div>
