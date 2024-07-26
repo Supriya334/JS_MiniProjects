@@ -1,7 +1,18 @@
 let products = {
     data: [
-        { productName: "Regular White T-Shirt", category: "TopWear", price: "30", image: "https://tse3.mm.bing.net/th?id=OIP.z61hI1q16JjtMpU9xivD1QHaJT&pid=Api&P=0&h=220" },
+        {
+            productName: "Regular White T-Shirt",
+             category: "TopWear", price: "30",
+            image: "https://tse3.mm.bing.net/th?id=OIP.z61hI1q16JjtMpU9xivD1QHaJT&pid=Api&P=0&h=220"
+        },
+
+
+
         { productName: "Regular White T-Shirt", category: "TopWear", price: "30", image: "http://personnalisation-teeshirt.com/wp-content/uploads/2013/11/classique-tee-shirt.jpg" },
+
+
+
+
         { productName: "Regular White T-Shirt", category: "TopWear", price: "30", image: "https://tse2.mm.bing.net/th?id=OIP.TaQZWhJHjJL6v8FbZLY5HwHaJ4&pid=Api&P=0&h=220" },
         { productName: "Regular White T-Shirt", category: "TopWear", price: "30", image: "https://tse3.mm.bing.net/th?id=OIP.CVY2TKNM1QFrCluCl6km-gHaLH&pid=Api&P=0&h=220" },
         { productName: "Black Hoodie", category: "TopWear", price: "50", image: "https://i.etsystatic.com/22987009/r/il/8d8db2/2596189189/il_794xN.2596189189_iovc.jpg" },
@@ -19,13 +30,12 @@ let products = {
         { productName: "Checked Shirt", category: "TopWear", price: "45", image: "https://www.sociomix.com/images/diaries/2/1613036544-923.jpg" },
         { productName: "Graphic Tee", category: "TopWear", price: "20", image: "https://tse1.mm.bing.net/th?id=OIP.qAxyIc5d8kXp1jpW07CteQHaLH&pid=Api&P=0&h=220" },
         { productName: "Khaki Trousers", category: "BottomWear", price: "50", image: "https://tse1.mm.bing.net/th?id=OIP.qAxyIc5d8kXp1jpW07CteQHaLH&pid=Api&P=0&h=220" }
-        // Add more products here as needed
     ]
 };
 
 for (let i of products.data) {
     let card = document.createElement("div");
-    card.classList.add("card", i.category.toLowerCase());
+    card.classList.add("card", i.category, "hide");
 
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");
@@ -36,31 +46,66 @@ for (let i of products.data) {
     imgContainer.appendChild(image);
     card.appendChild(imgContainer);
 
+    let container = document.createElement("div");
+    container.classList.add("container");
+
     let name = document.createElement("h5");
-    name.innerText = i.productName;
-    card.appendChild(name);
+    name.classList.add("product-name");
+    name.innerText = i.productName.toUpperCase();
+    container.appendChild(name);
 
     let price = document.createElement("h6");
-    price.innerText = `$${i.price}`;
-    card.appendChild(price);
+    price.innerText = "$" + i.price;
+    container.appendChild(price);
 
+    card.appendChild(container);
     document.getElementById("products").appendChild(card);
 }
+
+
+
 
 
 function filterProduct(value) {
     let buttons = document.querySelectorAll(".button-value");
 
     buttons.forEach((button) => {
-        if (value.toUpperCase() == button.innerText.toUpperCase()) {
-            button.classList.add("active")
+        if (value.toUpperCase() === button.innerText.toUpperCase()) {
+            button.classList.add("active");
+        } else {
+            button.classList.remove("active");
         }
-    }
-    else {
-            button.classList.remove("active")
-        })
+    });
+
+    let elements = document.querySelectorAll(".card");
+
+    elements.forEach((element) => {
+        if (value === "all") {
+            element.classList.remove("hide");
+        } else {
+            if (element.classList.contains(value)) {
+                element.classList.remove("hide");
+            } else {
+                element.classList.add("hide");
+            }
+        }
+    });
 }
 
+document.getElementById("search").addEventListener("click", () => {
+    let searchInput = document.getElementById("search-input").value;
+    let elements = document.querySelectorAll(".product-name");
+    let cards = document.querySelectorAll(".card");
+
+    elements.forEach((element, index) => {
+        if (element.innerText.includes(searchInput.toUpperCase())) {
+            cards[index].classList.remove("hide");
+        } else {
+            cards[index].classList.add("hide");
+        }
+    });
+});
+
 window.onload = () => {
-    filterProduct("all")
+    filterProduct("all");
 }

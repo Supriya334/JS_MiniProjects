@@ -68,3 +68,77 @@ body {
 .button-value:hover {
     background-color: #0056b3;
 }
+
+
+
+/* Style for the product cards container */
+#products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Style for each card */
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.2s;
+    width: 300px;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Style for the image container */
+  .image-container {
+    height: 350px;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Style for the product details container */
+  .container {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  /* Style for the product name */
+  .product-name {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Style for the product price */
+  .container h6 {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  /* Additional styles for category-based coloring (optional) */
+  .TopWear {
+    border: 2px solid #f39c12;
+  }
+  
+  .BottomWear {
+    border: 2px solid #3498db;
+  }
+  
+  .Jacket {
+    border: 2px solid #2ecc71;
+  }
+  
+  .Watch {
+    border: 2px solid #e74c3c;
+  }
+  
