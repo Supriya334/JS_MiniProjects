@@ -1,12 +1,5 @@
 
 
-body {
-    font-family: 'Arial', sans-serif;
-    justify-content: center;
-    align-items: center;
-
-}
-
 .container {
     padding: 30px;
     border-radius: 10px;
@@ -18,17 +11,14 @@ body {
 
 .search-box {
     margin-bottom: 20px;
-    display: flex;
     justify-content: center;
-  
-
 }
 
 #inp-word {
     width: calc(100% - 30px);
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px ;
     font-size: 16px;
 }
 
@@ -58,7 +48,8 @@ body {
 .word {
     display: flex;
     justify-content: space-around;
-    align-items: center; border: 1px solid rgb(218, 221, 218);
+    align-items: center;
+     border: 1px solid rgb(218, 221, 218);
     width: 60%;
     margin: auto;
 }
@@ -72,23 +63,17 @@ body {
     font-size: 18px;
     color: #656363;
     margin-top: 10px;
-   /* border: 1px solid rgb(227, 224, 224); */
    width: 60%;
    margin: auto;
 }
 
 .word-meaning, .word-example {
     margin-top: 10px;
-    font-size: 16px;
-    /* border: 1px solid rgb(240, 239, 239); */
     width: 60%;
     margin: auto;
     color: #333;
 }
 
-.word-example {
-    font-style: italic;
-}
 
 button i {
     font-size: 24px;
