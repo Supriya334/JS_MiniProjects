@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Show And hide password</title>
+</head>
+<style>body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+}
+
+input[type="password"],
+input[type="text"] {
+    width: 250px;
+    padding: 10px;
+    padding-right: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.bx {
+    font-size: 20px;
+    color: #7a797e;
+    transition: color 0.3s;
+}
+
+</style>
+<body>
+    <h2 style="text-align: center;">enter the password  </h2>
+    <div class="wrapper">
+        <input type="password" placeholder="password" id="password">
+
+        <span>
+            <i class='bx bx-happy-heart-eyes' id="eye" aria-hidden="true" onclick= "toggle()"></i>
+        </span>
+    </div>
+</body>
+<script>
+
+    var state = false;
+    function toggle() {
+        if (state) {
+            document.getElementById("password").setAttribute("type", "password");
+
+            document.getElementById("eye").style.color =' #7a797e'
+
+            state = false;
+
+          
+        }
+
+        else{
+            document.getElementById("password").setAttribute("type","text");
+
+            document.getElementById("eye").style.color='#5887ef'
+
+            state=true;
+        }
+    }
+
+</script>
+
+</html>
