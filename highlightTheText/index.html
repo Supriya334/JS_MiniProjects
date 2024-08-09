@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Highlight Searched Text</title>
+</head>
+
+<body>
+    <h2 style="color: aliceblue; text-align: center;display: block;margin-bottom: 20%;text-align: center;text-decoration: underline;
+    
+    ">Highlight Your Search Here</h2>
+    <img src="https://media.giphy.com/media/XstBuAWAIACME/giphy.gif" alt="">
+    <div class="container">
+        <div class="wrapper">
+            <input type="text" id="text-to-search" placeholder="Enter text to search">
+            <button onclick="search()">Search</button>
+        </div>
+        <p id="paragraph">
+            The Dawn of Computing:
+            The journey of computers began in the mid-20th century, with the development of the first electronic computers like the ENIAC and UNIVAC. These early machines were massive, filling entire rooms, and required intricate programming via punch cards and switches. Despite their size and complexity, these early computers laid the groundwork for the digital revolution. They were primarily used for scientific calculations and military purposes, offering a glimpse into the potential of automated computing. The evolution of these early machines signaled the beginning of an era that would eventually touch every aspect of human life.
+            <br>
+            The Personal Computer Revolution:
+            The 1970s and 1980s witnessed a significant shift with the advent of personal computers (PCs), making computing accessible to individuals and small businesses. Companies like Apple, IBM, and Microsoft played pivotal roles in this transformation. The introduction of user-friendly operating systems and software applications democratized computing, empowering users to perform tasks that were once the domain of large institutions. The personal computer revolution also paved the way for the development of the internet, setting the stage for the global connectivity that defines the modern world.
+            <br>
+           
+            
+            
+        </p>
+    </div>
+
+   
+</body>
+<script>
+    function search() {
+        let textToSearch = document.getElementById("text-to-search").value;
+        let paragraph = document.getElementById("paragraph");
+
+        // Correctly escape special characters
+        textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+        // Create a regex pattern with global and case-insensitive flags
+        let pattern = new RegExp(`${textToSearch}`, "gi");
+
+        // Replace matched text with highlighted version
+        paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`);
+    }
+</script>
+</html>

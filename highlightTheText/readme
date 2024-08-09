@@ -1,0 +1,40 @@
+🖍️ Highlight App
+🌟 Overview
+The Highlight App is a simple and intuitive web application that allows users to search for specific text within a paragraph and highlight all occurrences of the searched term. Perfect for study sessions, research, or just casual reading, this app makes it easy to spot important information quickly.
+
+✨ Features
+🔍 Text Search: Type in any text, and the app will highlight all instances of the searched term within the paragraph.
+🎨 Case-Insensitive Search: No need to worry about uppercase or lowercase—find your text no matter how it's written.
+⚡ Real-Time Highlighting: Instantly see highlighted results as soon as you hit the "Search" button.
+💻 Technology Stack
+HTML5: 🏗️ Structuring the content.
+CSS3: 🎨 Styling the user interface with a clean, modern look.
+JavaScript: 🧠 Implementing the logic for text searching and highlighting.
+🚀 Installation
+To get the Highlight App running locally, follow these steps:
+
+Clone the repository:
+bash
+Copy code
+git clone https://github.com/yourusername/highlight-app.git
+Navigate to the project directory:
+bash
+Copy code
+cd highlight-app
+Open index.html in your browser:
+Just open the index.html file in your web browser to start using the app.
+🛠️ Usage
+Enter Text to Search: 📝 Type the text you want to search for in the input field.
+Click Search: 🔍 Press the "Search" button to see all matches highlighted in the paragraph.
+View Results: 👀 The matched text will be highlighted, making it easy to find what you’re looking for.
+📁 Code Structure
+index.html: 📝 Contains the structure of the app.
+style.css: 🎨 Contains the styling for the app.
+script.js: 🧠 Handles the search and highlight functionality.
+🤝 Contributing
+Contributions are welcome! If you have any suggestions, spot any bugs, or want to add features, feel free to create an issue or submit a pull request. Let's make this app even better together!
+
+📜 License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Created by Supriya ✨
